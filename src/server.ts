@@ -6,21 +6,21 @@ const app = express()
 const socket = require('socket.io')
 
 app.use(cors({origin: "*"}))
-app.get('/posts/videos/stream', async (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 2;
-  try {
-    const posts = await payload.find({collection: 'posts', limit: limit, page: page, where: {
-      type: {
-        equals: "Short Video",
-      }} 
-    })
-    res.status(200).json(posts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
+// app.get('/posts/videos/stream', async (req, res) => {
+//   const page = parseInt(req.query.page) || 1;
+//   const limit = parseInt(req.query.limit) || 2;
+//   try {
+//     const posts = await payload.find({collection: 'posts', limit: limit, page: page, where: {
+//       type: {
+//         equals: "Short Video",
+//       }} 
+//     })
+//     res.status(200).json(posts);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
 
 
 const start = async () => {
